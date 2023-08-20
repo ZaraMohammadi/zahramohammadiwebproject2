@@ -1,0 +1,11 @@
+{
+    "routes": [
+      { "src": "/(.*)", "dest": "/index.html" }
+    ],
+    "env": {
+      "BASE_URL": "https://example.com"
+    },
+    "builds": [
+      { "src": "index.php", "use": "@vercel/php" }
+    ]
+}
