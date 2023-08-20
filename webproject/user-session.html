@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neshast</title>
+    <link rel="stylesheet" href="css/bootstrap.fa.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light">
+      <button class="navbar-toggler bg-light mb-2" data-toggle="collapse" data-target="#mynav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse " id="mynav">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Strat Sidebar -->
+            <div class="col-xl-2 col-md-2 col-sm-3 sidebar fixed-top">
+              <a class="navbar-brand d-block text-center mx-auto  pt-3"><img src="icon/brand-Neshast.png" style="width: 64px"  alt="" /></a>
+              <a href="#" class="navbar-brand d-block text-center mx-auto mb-5 py-1" style="color:#208AA2">نشست
+              </a>
+
+              <ul class="nav-bar flex-column list-unstyled mt-4">
+                <li class="nav-item sidebar-link">
+                  <a href="user-dashboard.html" class="nav-link p-1 my-3  text-secondary">
+                    <img src="icon/home-icon.png" style="width: 28px" class="ml-4" alt="" />داشبـورد
+                  </a>
+                </li>
+
+                <li class="nav-item sidebar-link">
+                  <a href="user-duty.html" class="nav-link p-1 my-3 text-secondary"><img src="icon/duty-icon.png" style="width: 28px" class="ml-4" alt=""/>وظـایف
+                  </a>
+                </li>
+
+                <li class="nav-item sidebar-link">
+                  <a href="#" class="nav-link active-link p-1 my-3 text-secondary">
+                    <img src="icon/session-icon.png" style="width: 28px" class="ml-4" alt="" />جـلسات
+                  </a>
+                </li>
+                <hr />
+                <li class="nav-item sidebar-link">
+                  <a href="#" class="nav-link p-1 my-3 mt-5 text-secondary">
+                    <img src="icon/setting-icon.png" style="width: 28px" class="ml-4" alt=""/>تنظیمات
+                  </a>
+                </li>
+
+                <li class="nav-item sidebar-link">
+                  <a href="#" class="nav-link p-1 my-3 text-secondary">
+                    <img src="icon/exit-icon.png" style="width: 28px" class="ml-4" alt=""/>خــروج
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Sidebar -->
+
+            <!-- Start topNav -->
+            <div class="col-xl-10 col-md-10 col-sm-9 mr-auto fixed-top topnav py-1">
+              <div class="row ">
+                <div class="col-lg-9 col-md-8 col-7">
+                  <h4 class="text-light mt-1">وظـایف</h4>
+                </div>
+                <div class="col-lg-2 col-md-3 col-3 pt-2 text-light">
+                  <h6><small>
+                    شنبه 20 اردیبهشت 1402</h6>
+                  </small>
+                </div>
+                <div class="col-lg-1 col-md-1 col-2 mr-md-auto">
+                  <div id="user-pic" class="text-center pt-1 px-auto">
+                  <a href=""><img src="img/user.png" style="width:32px" alt=""></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End topNav -->
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navigation -->
+
+    <!-- Start content & tables -->
+    <section>
+        <div class="container mt-5 pt-5 pr-5">
+            <div class="row">
+                <div class="col-md-2 ordering-by text-center mr-auto">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        مرتب سازی
+                        </a>
+                    
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">نام</a>
+                        <a class="dropdown-item" href="#">تاریخ جلسه</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-11 mr-auto">
+                    
+                    <div class="dashboard-blt-content mt-5">
+                        <div class="list-group list-group-flush">
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between align-items-center ">
+                            جلسه شورا
+                            <div class="d-flex ">
+                               <div class="session-date-time ml-5"><small>1402/4/14</small></div>
+                               <button type="button" class="btn session-info" data-toggle="modal" data-target="#USession-info-Modal">
+                                <small>اطلاعـات</small></button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item list-group-item-action">
+                          <div class="d-flex w-100 justify-content-between align-items-center">
+                          List group item heading
+                          <div class="d-flex ">
+                              <div class="session-date-time ml-5"><small>1402/4/14</small></div>
+                              <button type="button" class="btn session-info" data-toggle="modal" data-target="#USession-info-Modal">
+                                <small>اطلاعـات</small></button>              
+                          </div>
+                          </div>
+                      </div>
+                      <div class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                        List group item heading
+                        <div class="d-flex ">
+                            <div class="session-date-time ml-5"><small>1402/4/14</small></div>
+                            <button type="button" class="btn session-info" data-toggle="modal" data-target="#USession-info-Modal">
+                              <small>اطلاعـات</small></button>
+                        </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+
+        <!-- modals -->
+        <div class="modal fade" id="USession-info-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="containar">
+                  <div class="m-s-topic">جزئیات جلسه</div>
+                  <div class="d-flex ">
+                    <div>
+                      <div class="m-s-title">نام جلسه</div>
+                      <div class="m-s-text">جلسه شورای معاونین</div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <div class="m-s-title">مدیر جلسه</div>
+                      <div class="m-s-text">حمید عزیزی</div>
+                    </div>
+                    <div>
+                      <div class="m-s-title">مکان جلسه</div>
+                      <div class="m-s-text" >اتاق A002</div>
+                    </div>
+                    <div>
+                      <div class="m-s-title">تاریخ جلسه</div>
+                      <div class="m-s-text" >1402/5/20 20:00</div>
+                    </div>
+                  </div>
+                  <div>
+                      <div class="m-s-title">توضیحات جلسه</div>
+                      <div class="m-s-text">تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدو هنگی</div>
+                  </div>
+                  <div>  
+                      <div class="m-s-title mt-4">پیوست فایل</div>
+                      <div class="m-session-doc"><a href="img/user.png" download="">picture.png</a></div>
+                      <div class="m-session-doc"><a href="img/user.png" download="">zipped-file-doc.zip</a></div>
+                      <div class="m-session-doc"><a href="img/user.png" download="">pdf-session-description.pdf</a></div>
+                  </div>   
+                  <div>  
+                    <div class="m-s-title mt-4">مصوبات جلسه</div>
+                    <div class="m-session-doc"><a href="img/user.png" download="">pdf-session-description.pdf</a></div>
+                </div>   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+    <!-- End content & tables -->
+    <!-- optional Javascript-->
+    <script src="script/jquery-3.3.1.slim.min.js"></script>
+    <script src="script/popper.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/main.js"></script>
+  </body>
+</html>

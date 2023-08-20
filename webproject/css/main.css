@@ -1,0 +1,343 @@
+@font-face {
+    font-family: Iran;
+    src: url("../font/IranianSans.ttf") format("truetype");
+}
+
+*{
+    font-family:IRANSans ;
+    /* font-size: 14px; */
+
+}
+body{
+
+    background-color:#e8f3ff;
+}
+
+.sidebar{
+    backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(248, 248, 248, 0.475);
+    border: 1px solid rgba(248,248,248,0.34);
+    height: 100vh;
+    box-shadow: -3px 5px 15px rgba(153, 153, 153, 0.233);
+    border-radius: 15px 0 0 15px;
+   
+}
+
+.topnav{
+ 
+    backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(32,138,162,0.77);
+    box-shadow: -5px 10px 12px rgba(153, 153, 153, 0.233);
+    height: 50px;
+}
+
+
+.sidebar-link{
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover{
+   background-color: rgba(210, 217, 217, 0.484);
+   border-radius: 6px;
+}
+
+.active-link{
+
+    backdrop-filter: blur(6px) saturate(180%);
+    background-color: rgba(32,138,162,0.23);
+    border: 1px solid rgba(32,138,162,0);
+    border-radius: 6px;
+    
+}
+
+#user-pic{
+    background-color: aliceblue;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid rgb(146, 142, 142);
+}
+
+@media(max-width : 786px) {
+    
+    .topnav{
+        position: static;
+    }
+
+    .sidebar{
+        position: static;
+        height: auto;
+    }
+}
+
+.dashboard-content{
+    height: 180px;
+    backdrop-filter: blur(9px) saturate(180%);
+    background-color: #fff;
+    border: 1px solid rgba(248,248,248,0.34);
+    box-shadow: -3px 5px 15px rgba(153, 153, 153, 0.233);
+    border-radius: 5px;
+    padding: 0;
+}
+.dashboard-blt-content{
+
+    backdrop-filter: blur(9px) saturate(180%);
+    background-color: #fff;
+    border: 1px solid rgba(248,248,248,0.34);
+    box-shadow: -3px 5px 15px rgba(153, 153, 153, 0.233);
+    border-radius: 5px;
+    padding: 0;
+}
+
+
+.dash-blt-title{
+    background-color: #fa916a;
+    border-radius: 15px 15px 0 0 ;
+}
+
+.dash-ses-title{
+    background-color: #FFCE5C;
+    border-radius: 15px 15px 0 0 ;
+}
+
+.dash-dty-title{
+    background-color:#88B380;
+    border-radius: 15px 15px 0 0 ;
+}
+
+#profile-pic{
+    
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 3px rgba(153, 153, 153, 0.164);
+}
+
+.profile-box{
+    background-color: #f8f9fa;
+    border-radius: 1vh;
+}
+
+.profile-box:hover{
+    background-color: rgba(210, 217, 217, 0.305);
+}
+
+/*********************** Start User-Duty styles**************** */
+.ordering-by{
+    width: 150px;
+    height: 50px;
+    border: 2px solid #2CA0BB;
+    border-radius: 25px;
+    color:#2CA0BB
+}
+
+.duty-info,.session-info{
+    background-color: #94DDEE;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#707070;
+}
+
+.duty-status-0{
+    background-color:#fff ;
+    border:2px solid #E97C61;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#E97C61;
+}
+
+.duty-status-1{
+    background-color:#fff ;
+    border:2px solid #FFB703;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#FFB703;
+}
+
+.duty-status-2{
+    background-color: #fff;
+    border: 2px solid #29C0AE;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#29C0AE;
+}
+
+
+.duty-end-time,.session-date-time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #707070;
+    margin-top: 10px;
+}
+
+/* modal duty styles */
+.m-d-text,.m-s-text{
+    font-size: 14px;
+    color: #707070;
+    margin: 1px 20px 20px 20px;
+}
+.m-d-title,.m-s-title{
+    font-size: 12px;
+    color: #2CA0BB;
+    margin:5px 20px;
+}
+
+#m-d-btncompelet,#m-d-btnstart{
+    background-color: #29C0AE;
+    width: 170px;
+    height: 35px;
+    border-radius:10px;
+    color: #e8f3ff;
+}
+
+.m-d-topic,.m-s-topic{
+    font-size: 20px;
+    color: #2CA0BB;
+    margin: 2px 20px 25px 20px;
+}
+
+.m-d-lable{
+    font-size: 11px;
+    color: #707070;
+    margin: 1px 20px 10px 20px;
+}
+
+#m-d-btnsubmit,#m-s-btnsubmit,#m-s-btneditsubmit{
+    background-color: #29C0AE;
+    width: 170px;
+    height: 35px;
+    border-radius:10px;
+    color: #e8f3ff;
+    margin-right: 295px;
+}
+
+#m-d-btnseereport{
+    background-color:#fff;
+    border: 2px solid #2CA0BB;
+    width: 170px;
+    height: 35px;
+    border-radius:10px;
+    color: #2CA0BB;
+}
+
+.m-report-doc a,.m-session-doc a{
+    font-size: 13px;
+    color: #707070;
+    margin:5px 5px;
+}
+
+/* ///////////admin session styles//////////// */
+.addsession{
+    width: 150px;
+    height: 50px;
+    border: 2px solid #29C0AE;
+    border-radius: 25px;
+    color:#29C0AE
+}
+.addsession:hover{
+    background-color: #29C0AE;
+    color: #f8f9fa;
+}
+
+.btn-session-duty{
+    background-color:#FFCE5C;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#707070;
+    margin: 0 20px;
+}
+.btn-session-member{
+    background-color:#88B380;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#707070;
+}
+
+#m-s-btneditsession,#m-s-btnaddsessionmember,#m-s-btneditduty{
+    background-color:#fff;
+    border: 2px solid #2CA0BB;
+    width: 150px;
+    height: 35px;
+    border-radius:10px;
+    color: #2CA0BB;
+}
+
+#m-s-btndeletesession,.m-s-btndeleteduty{
+    background-color:#fff;
+    border: 2px solid #E97C61;
+    width: 150px;
+    height: 35px;
+    border-radius:10px;
+    color: #E97C61;
+}
+
+.btn-session-delM{
+    background-color:#fff;
+    border: 2px solid #E97C61;
+    border-radius:15px;
+    color: #E97C61;
+}
+
+#btn-session-addM{
+    width: 150px;
+    background-color:#fff;
+    border: 2px solid #29C0AE;
+    border-radius:15px;
+    color:#29C0AE;
+    margin-right: 20px;
+}
+
+/*********** login page styles ***********/
+.login-box{
+    background-color: #F8F6F1;
+    border: 2px solid #208AA2;
+    border-radius: 10px;
+    height: 590px;
+}
+
+.login-logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-name{
+    color:#208AA2 ;
+    font-weight:600 ;
+}
+.login-text{
+    color:#208AA2 ;
+}
+
+#btn-login-submit{
+    background-color:#208AA2 ;
+    color: #F8F6F1;
+    width: 327px;
+
+
+}

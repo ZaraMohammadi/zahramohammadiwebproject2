@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neshast</title>
+    <link rel="stylesheet" href="css/bootstrap.fa.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/persian-datepicker.min.css">
+  </head>
+  <body>
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light">
+      <button class="navbar-toggler bg-light mb-2" data-toggle="collapse" data-target="#mynav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse " id="mynav">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Strat Sidebar -->
+            <div class="col-xl-2 col-md-2 col-sm-3 sidebar fixed-top">
+              <a class="navbar-brand d-block text-center mx-auto  pt-3"><img src="icon/brand-Neshast.png" style="width: 64px"  alt="" /></a>
+              <a href="#" class="navbar-brand d-block text-center mx-auto mb-5 py-1" style="color:#208AA2">نشست
+              </a>
+
+              <ul class="nav-bar flex-column list-unstyled mt-4">
+                <li class="nav-item sidebar-link">
+                  <a href="admin-dashboard.html" class="nav-link p-1 my-3  text-secondary">
+                    <img src="icon/home-icon.png" style="width: 28px" class="ml-4" alt="" />داشبـورد
+                  </a>
+                </li>
+
+                <li class="nav-item sidebar-link">
+                  <a href="admin-duty.html" class="nav-link p-1 my-3 text-secondary"><img src="icon/duty-icon.png" style="width: 28px" class="ml-4" alt=""/>وظـایف
+                  </a>
+                </li>
+
+                <li class="nav-item sidebar-link">
+                  <a href="#" class="nav-link active-link p-1 my-3 text-secondary">
+                    <img src="icon/session-icon.png" style="width: 28px" class="ml-4" alt="" />جـلسات
+                  </a>
+                </li>
+
+                <li class="nav-item sidebar-link">
+                  <a href="#" class="nav-link p-1 my-3 mb-5 text-secondary">
+                    <img src="icon/icon-user.png" style="width: 28px" class="ml-4" alt="" />اعضــا
+                  </a>
+                </li>
+                <hr />
+                <li class="nav-item sidebar-link">
+                  <a href="#" class="nav-link p-1 my-3 mt-5 text-secondary">
+                    <img src="icon/setting-icon.png" style="width: 28px" class="ml-4" alt=""/>تنظیمات
+                  </a>
+                </li>
+
+                <li class="nav-item sidebar-link">
+                  <a href="#" class="nav-link p-1 my-3 text-secondary">
+                    <img src="icon/exit-icon.png" style="width: 28px" class="ml-4" alt=""/>خــروج
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Sidebar -->
+
+            <!-- Start topNav -->
+            <div class="col-xl-10 col-md-10 col-sm-9 mr-auto fixed-top topnav py-1">
+              <div class="row ">
+                <div class="col-lg-9 col-md-8 col-7">
+                  <h4 class="text-light mt-1">جـلسات</h4>
+                </div>
+                <div class="col-lg-2 col-md-3 col-3 pt-2 text-light">
+                  <h6><small>
+                    شنبه 20 اردیبهشت 1402</h6>
+                  </small>
+                </div>
+                <div class="col-lg-1 col-md-1 col-2 mr-md-auto">
+                  <div id="user-pic" class="text-center pt-1 px-auto">
+                  <a href=""><img src="img/user.png" style="width:32px" alt=""></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End topNav -->
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navigation -->
+
+    <!-- Start content & tables -->
+    <section>
+        <div class="container mt-5 pt-5 pr-5">
+            <div class="row">
+                <div class="col-md-4 text-center mr-auto">
+                    <div class="d-flex justify-content-between">
+                        <div class="addsession">
+                            <button type="button" class="btn" data-toggle="modal" data-target="#addS-session-Modal">جلسه جدید</button>
+                        </div>
+                        <div class="dropdown ordering-by">
+                            <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            مرتب سازی
+                            </a>
+                        
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">نام</a>
+                            <a class="dropdown-item" href="#">تاریخ جلسه</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-11 mr-auto">
+                    
+                    <div class="dashboard-blt-content mt-5">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center ">
+                                جلسه شورا
+                                <div class="d-flex justify-content-between ">
+                                    <div class="session-date-time ml-5"><small>1402/4/14</small></div>
+                                    <button type="button" class="btn session-info" data-toggle="modal" data-target="#ASession-info-Modal">
+                                        <small>اطلاعـات</small></button>
+
+                                    <button type="button" class="btn btn-session-duty" data-toggle="collapse" data-target="#collapse-sessiom-duty" aria-expanded="false" aria-controls="collapse-sessiom-duty">
+                                        <small>وظایف جلسه</small></button>
+                                    
+                                    <button type="button" class="btn btn-session-member" data-toggle="collapse" data-target="#collapse-sessiom-member" aria-expanded="false" aria-controls="collapse-sessiom-member">
+                                        <small>اعضای جلسه</small></button>
+                                </div>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="collapse" id="collapse-sessiom-member">
+                        <div class="">
+                            <button type="button" class="btn" id="btn-session-addM" data-toggle="modal" data-target="#addM-session-Modal">
+                                <small>افزودن عضو به جلسه</small></button>
+                        </div>
+                        <div class="">
+                            <div class="dashboard-blt-content mt-2">
+                                <div class="list-group list-group-flush">
+                                <div class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between align-items-center ">
+                                    محمد علیزاده
+                                    <div class="d-flex ">
+                                    
+                                       <button type="button" class="btn btn-session-delM" data-toggle="modal" data-target="#">
+                                        <small>حذف از جلسه</small></button>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action">
+                                  <div class="d-flex w-100 justify-content-between align-items-center">
+                                  سارا بیاتی
+                                  <div class="d-flex ">
+                                      
+                                      <button type="button" class="btn btn-session-delM" data-toggle="modal" data-target="#">
+                                        <small>حذف از جلسه</small></button>              
+                                  </div>
+                                  </div>
+                              </div>
+                              <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                احمد صابری
+                                <div class="d-flex ">
+                                    
+                                    <button type="button" class="btn btn-session-delM" data-toggle="modal" data-target="#U">
+                                      <small>حذف از جلسه</small></button>
+                                </div>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="collapse" id="collapse-sessiom-duty">
+                        <div class="">
+                            <button type="button" class="btn" id="btn-session-addM" data-toggle="modal" data-target="#addD-session-Modal">
+                                <small>افزودن وظیفه جدید</small></button>
+                        </div>
+                        <div class="">
+                            <div class="dashboard-blt-content mt-2">
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between align-items-center">
+                                        زنگ زدن به معاون سازمان
+                                        <div class="d-flex ">
+                                           <div class="duty-end-time"><small>1402/4/14</small></div>
+                                            <div class="duty-status-1 mx-4"><small>در حال انجام</small></div>
+                                            <button type="button" class="btn duty-info" data-toggle="modal" data-target="#Sduty-show1-Modal">
+                                            <small>اطلاعـات</small></button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item list-group-item-action">
+                                      <div class="d-flex w-100 justify-content-between align-items-center">
+                                      تکمیل کردن گزارش ها
+                                      <div class="d-flex ">
+                                          <div class="duty-end-time"><small>1402/4/14</small></div>
+                                          <div class="duty-status-0 mx-4"><small>انجام نشده</small></div>
+                                          <button type="button" class="btn duty-info" data-toggle="modal" data-target="#Sduty-show0-Modal">
+                                            <small>اطلاعـات</small></button>               
+                                      </div>
+                                      </div>
+                                  </div>
+                                  <div class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                    زمانبندی کمپین ها
+                                    <div class="d-flex ">
+                                        <div class="duty-end-time"><small>1402/4/14</small></div>
+                                        <div class="duty-status-2 mx-4"><small>انجام شده</small></div>
+                                        <button type="button" class="btn duty-info" data-toggle="modal" data-target="#Sduty-show2-Modal">
+                                          <small>اطلاعـات</small></button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+
+              <!-- duty modals -->
+              <div class="modal fade" id="Sduty-show0-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header ">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="containar">
+                        <div class="m-d-topic">جزئیات وظیفه</div>
+                        <div>
+                          <div class="m-d-title">عنوان فعالیت</div>
+                          <div class="m-d-text" id="m-d-dutyname">وظیفه من</div>
+                          <div class="m-d-title">عنوان جلسه</div>
+                          <div class="m-d-text" id="m-d-sessionname">جلسه من </div>
+                          <div class="m-d-title">فرد انجام دهنده</div>
+                          <div class="m-d-text" id="m-d-domember">احمد صابری</div>
+                        </div>
+                        <div class="d-flex">
+                          <div>
+                            <div class="m-d-title">تاریخ ایجاد</div>
+                            <div class="m-d-text" id="m-d-ctime">1402/5/12 18:00</div>
+                          </div>
+                          <div>
+                            <div class="m-d-title">موعد انجام</div>
+                            <div class="m-d-text" id="m-d-etime">1402/5/20 20:00</div>
+                          </div>
+                          
+                        </div>
+                        <div>
+                          <div class="m-d-title">توضیحات</div>
+                          <div class="m-d-text" id="m-d-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="m-s-btneditduty" class="btn" data-toggle="modal" data-target="#editD-session-Modal">ویرایش</button>
+                      <button type="button"  class="btn m-s-btndeleteduty" data-toggle="modal" data-target="#Sduty-delete-Modal">حذف</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="modal fade" id="Sduty-show1-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header ">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="containar">
+                        <div class="m-d-topic">جزئیات وظیفه</div>
+                        <div>
+                          <div class="m-d-title">عنوان فعالیت</div>
+                          <div class="m-d-text" id="m-d-dutyname">وظیفه من</div>
+                          <div class="m-d-title">عنوان جلسه</div>
+                          <div class="m-d-text" id="m-d-sessionname">جلسه من </div>
+                          <div class="m-d-title">فرد انجام دهنده</div>
+                          <div class="m-d-text" id="m-d-domember">سارا بیاتی</div>
+                        </div>
+                        <div class="d-flex">
+                          <div>
+                            <div class="m-d-title">تاریخ ایجاد</div>
+                            <div class="m-d-text" id="m-d-ctime">1402/5/12 18:00</div>
+                          </div>
+                          <div>
+                            <div class="m-d-title">موعد انجام</div>
+                            <div class="m-d-text" id="m-d-etime">1402/5/20 20:00</div>
+                          </div>
+                          
+                        </div>
+                        <div>
+                          <div class="m-d-title">توضیحات</div>
+                          <div class="m-d-text" id="m-d-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="m-s-btneditduty" class="btn" data-toggle="modal" data-target="#editD-session-Modal">ویرایش</button>
+                      <button type="button" class="btn m-s-btndeleteduty" data-toggle="modal" data-target="#Sduty-delete-Modal">حذف</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="modal fade" id="Sduty-show2-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header ">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="containar">
+                        <div class="m-d-topic">جزئیات وظیفه</div>
+                        <div>
+                          <div class="m-d-title">عنوان فعالیت</div>
+                          <div class="m-d-text" id="m-d-dutyname">وظیفه من</div>
+                          <div class="m-d-title">عنوان جلسه</div>
+                          <div class="m-d-text" id="m-d-sessionname">جلسه من </div>
+                        </div>
+                        <div class="d-flex">
+                          <div>
+                            <div class="m-d-title">تاریخ ایجاد</div>
+                            <div class="m-d-text" id="m-d-ctime">1402/5/12 18:00</div>
+                          </div>
+                          <div>
+                            <div class="m-d-title">موعد انجام</div>
+                            <div class="m-d-text" id="m-d-etime">1402/5/20 20:00</div>
+                          </div>
+                          <div>
+                            <div class="m-d-title">تاریخ اتمام</div>
+                            <div class="m-d-text" id="m-d-etime">1402/5/19 10:00</div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="m-d-title">توضیحات</div>
+                          <div class="m-d-text" id="m-d-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" id="m-d-btnseereport" class="btn" data-toggle="modal" data-target="#Sduty-modal-report">مشاهده گزارش</button>
+                    <button type="button" class="btn m-s-btndeleteduty" data-toggle="modal" data-target="#Sduty-delete-Modal">حذف</button>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="modal fade" id="Sduty-modal-report" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header ">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="containar">
+                        <div class="m-d-topic">گــزارش وظیفه</div>
+                        <div>
+                            <div class="m-d-title">توضیحات گزارش</div>
+                            <div class="m-d-text">تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی</div>
+                        </div>
+                        <div>  
+                            <div class="m-d-title mt-4">پیوست فایل</div>
+                            <div class="m-report-doc"><a href="img/user.png" download="">piture-of-report-1-1-1.png</a></div>
+                            <div class="m-report-doc"><a href="img/user.png" download="">zipped-file-doc.zip</a></div>
+                            <div class="m-report-doc"><a href="img/user.png" download="">pdf-report-description.pdf</a></div>
+                        </div>   
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+        <!-- session modals -->
+        <div class="modal fade" id="ASession-info-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="containar">
+                  <div class="m-s-topic">جزئیات جلسه</div>
+                  <div class="d-flex ">
+                    <div>
+                      <div class="m-s-title">نام جلسه</div>
+                      <div class="m-s-text">جلسه شورای معاونین</div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <div class="m-s-title">مدیر جلسه</div>
+                      <div class="m-s-text">حمید عزیزی</div>
+                    </div>
+                    <div>
+                      <div class="m-s-title">مکان جلسه</div>
+                      <div class="m-s-text" >اتاق A002</div>
+                    </div>
+                    <div>
+                      <div class="m-s-title">تاریخ جلسه</div>
+                      <div class="m-s-text" >1402/5/20 20:00</div>
+                    </div>
+                  </div>
+                  <div>
+                      <div class="m-s-title">توضیحات جلسه</div>
+                      <div class="m-s-text">تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدو هنگی</div>
+                  </div>
+                  <div>  
+                      <div class="m-s-title mt-4">پیوست فایل</div>
+                      <div class="m-session-doc"><a href="img/user.png" download="">picture.png</a></div>
+                      <div class="m-session-doc"><a href="img/user.png" download="">zipped-file-doc.zip</a></div>
+                      <div class="m-session-doc"><a href="img/user.png" download="">pdf-session-description.pdf</a></div>
+                  </div>   
+                  <div>  
+                    <div class="m-s-title mt-4">مصوبات جلسه</div>
+                    <div class="m-session-doc"><a href="img/user.png" download="">pdf-session-description.pdf</a></div>
+                </div>   
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="m-s-btneditsession" class="btn" data-toggle="modal" data-target="#editS-session-Modal">ویرایش</button>
+                <button type="button" id="m-s-btndeletesession" class="btn" data-toggle="modal" data-target="#ASession-delete-Modal">حذف</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="modal fade" id="ASession-delete-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  آیا از حذف این جلسه مطمئن هستید؟
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">خیـر</button>
+                  <button type="button" id="yes-del-session" class="btn btn-primary" data-toggle="modal" data-target="#s-alert-delsession" >بلــه</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="s-alert-delsession" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  جلسه با موفقیت حذف شد.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="addM-session-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="dashboard-blt-content mt-2">
+                            <div class="list-group list-group-flush">
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100  align-items-center ">
+                                    <div class="form-check">
+                                        <input class="form-check-input position-static" type="checkbox" value="option1" >
+                                    </div> 
+                                مژگان انصاری
+                                
+                                </div>
+                            </div>
+                            <div class="list-group-item list-group-item-action">
+                              <div class="d-flex w-100  align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input position-static" type="checkbox" value="option1" >
+                                </div> 
+                              علی اکبری
+                              
+                              </div>
+                          </div>
+                          <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100  align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input position-static" type="checkbox" value="option1" >
+                                </div> 
+                            مهدی حسینی
+                            
+                            </div>
+                            </div>
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100  align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input position-static" type="checkbox" value="option1" >
+                                    </div> 
+                                زهره اعتمادی
+                                
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="m-s-btnaddsessionmember" class="btn" data-toggle="modal" data-target="#s-alert-addMsession">افزودن</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="s-alert-addMsession" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  اعضای جدید به جلسه افزوده شدند.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="addD-session-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="containar">
+                    <div class="m-d-topic">افزودن وظیفه</div>
+                    <div>
+                      <form action="" class="needs-validation" novalidate>
+                        <div class="m-d-title mt-4">عنوان فعالیت</div>
+                        <input required class="form-control " type="text" placeholder="نام فعالیت"> 
+                        <div class="m-d-title mt-4">فرد انجام دهنده</div>
+                        <select class="custom-select" required>
+                            <option selected disabled>کارمند را انتخاب کنید</option>
+                            <option value="1">سارا بیاتی</option>
+                            <option value="2">محمد علیزاده</option>
+                            <option value="3">احمد صابری</option>
+                          </select>
+                        <div class="m-d-title mt-4">تاریخ و زمان موعد انجام</div>        
+                        <input class="timePicker mx-3" id="d-report-datetime" required /> 
+                        <div class="m-d-title mt-4">توضیحات وظیفه</div>
+                        <div class="form-group mx-3">
+                          <textarea class="form-control" required id="d-report-dec" rows="3"></textarea>
+                        </div>    
+                        
+                        <button type="submit" id="m-d-btnsubmit" class="btn" data-toggle="modal" data-target="">ثبت</button>
+                      </form>
+                    </div>
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="addS-session-Modal" tabindex="-1" aria-labelledby="addS-session-Modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="containar">
+                    <div class="m-s-topic">افزودن جلسه</div>
+                    <div>
+                      <form action="" class="needs-validation" novalidate>
+ 
+                        <div class="m-s-title">نام جلسه</div>
+                        <input required class="form-control " type="text" id="s-name" placeholder="نام جلسه"> 
+
+                        <div class="m-s-title">مکان جلسه</div>
+                        <input required class="form-control " type="text" id="s-place" placeholder="مکان جلسه"> 
+                      
+                        <div class="m-s-title">تاریخ جلسه</div>
+                        <input class="timePicker mx-3" id="s-datetime" required /> 
+
+                        <div class="m-s-title">توضیحات جلسه</div>
+                        <textarea class="form-control" required id="s-dec" rows="3"></textarea>
+    
+                        <div class="m-s-title mt-4">پیوست فایل</div>
+                        <div class="m-d-lable">فایل های خود را آپلود کنید</div>
+                        <div class="form-group mx-3">
+                          <input type="file" multiple class="form-control-file" id="s-file">
+                        </div>
+                      
+                      
+                      <div class="m-s-title mt-4">مصوبات جلسه</div>
+                      <div class="m-d-lable">فایل های خود را آپلود کنید</div>
+                      <div class="form-group mx-3">
+                        <input type="file" multiple class="form-control-file" id="s-mos">
+                      </div>
+                      <button type="submit" id="m-s-btnsubmit" class="btn" data-toggle="modal" data-target="">ثبت</button>
+                      </form>
+                  </div>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="editS-session-Modal" tabindex="-1" aria-labelledby="editS-session-Modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="containar">
+                    <div class="m-s-topic">افزودن جلسه</div>
+                    <div>
+                      <form action="" class="needs-validation" novalidate>
+ 
+                        <div class="m-s-title">نام جلسه</div>
+                        <input required class="form-control " type="text" id="Sedit-name" value="جلسه شورا"> 
+
+                        <div class="m-s-title">مکان جلسه</div>
+                        <input required class="form-control " type="text" id="Sedit-place" value="اتاق A002"> 
+                      
+                        <div class="m-s-title">تاریخ جلسه</div>
+                        <input class="timePicker mx-3" id="Sedit-datetime" required value="20/5/1402 20:00"/> 
+
+                        <div class="m-s-title">توضیحات جلسه</div>
+                        <textarea class="form-control" required id="Sedit-dec" rows="3" placeholder="تماس مدیر فنی شرکت سیما و صحبت درباره برگزاری همایش و هماهنگی تماس مدو هنگی"></textarea>
+    
+                        <div class="m-s-title mt-4">پیوست فایل</div>
+                        <div class="m-d-lable">فایل های خود را آپلود کنید</div>
+                        <div class="form-group mx-3">
+                          <input type="file" multiple class="form-control-file" id="Sedit-file">
+                        </div>
+                        <div class="m-session-doc mr-3"><img src="icon/icons8-close-16.png" alt=""><a href="img/user.png" download=""> picture.png</a></div>
+                        <div class="m-session-doc mr-3"><img src="icon/icons8-close-16.png" alt=""><a href="img/user.png" download="">zipped-file-doc.zip</a></div>
+                        <div class="m-session-doc mr-3"><img src="icon/icons8-close-16.png" alt=""><a href="img/user.png" download="">pdf-session-description.pdf</a></div>
+
+                      
+                      <div class="m-s-title mt-4">مصوبات جلسه</div>
+                      <div class="m-d-lable">فایل های خود را آپلود کنید</div>
+                      <div class="form-group mx-3">
+                        <input type="file" multiple class="form-control-file" id="Sedit-mos">
+                      </div>
+                      <div class="m-session-doc"><img src="icon/icons8-close-16.png" alt=""><a href="img/user.png" download="">pdf-session-description.pdf</a></div>
+                      <button type="submit" id="m-s-btneditsubmit" class="btn" data-toggle="modal" data-target=""> ثبت ویرایش</button>
+                      </form>
+                  </div>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="Sduty-delete-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  آیا از حذف این وظیفه مطمئن هستید؟
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">خیـر</button>
+                  <button type="button" id="yes-del-duty" class="btn btn-primary" data-toggle="modal" data-target="#s-alert-delduty" >بلــه</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="s-alert-delduty" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  وظیفه با موفقیت حذف شد.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="editD-session-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="containar">
+                    <div class="m-d-topic">ویرایش وظیفه</div>
+                    <div>
+                      <form action="" class="needs-validation" novalidate>
+                        <div class="m-d-title mt-4">عنوان فعالیت</div>
+                        <input required class="form-control " type="text" value="زنگ زدن به معاون"> 
+                        <div class="m-d-title mt-4">فرد انجام دهنده</div>
+                        <select class="custom-select" required>
+                            <option selected disabled>کارمند را انتخاب کنید</option>
+                            <option value="1">سارا بیاتی</option>
+                            <option value="2">محمد علیزاده</option>
+                            <option value="3">احمد صابری</option>
+                          </select>
+                        <div class="m-d-title mt-4">تاریخ و زمان موعد انجام</div>        
+                        <input class="timePicker mx-3" id="d-report-datetime" required /> 
+                        <div class="m-d-title mt-4">توضیحات وظیفه</div>
+                        <div class="form-group mx-3">
+                          <textarea class="form-control" required id="d-report-dec" rows="3" placeholder="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باش"></textarea>
+                        </div>    
+                        
+                        <button type="submit" id="m-d-btnsubmit" class="btn" data-toggle="modal" data-target="">ثبت</button>
+                      </form>
+                    </div>
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </section>
+
+    <!-- End content & tables -->
+    <!-- optional Javascript-->
+    <script src="script/jquery-3.3.1.slim.min.js"></script>
+    <script src="script/popper.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/persian-date.min.js"></script>
+    <script src="script/persian-datepicker.min.js"></script>
+    <script src="script/main.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+  </body>
+</html>
